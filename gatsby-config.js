@@ -14,15 +14,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `stills`,
-        path: `${__dirname}/src/pages/mainStillsGallery`,
+        name: `sub_categories`,
+        path: `${__dirname}/content/sub_categories`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `main`,
-        path: `${__dirname}/src/pages/index`,
+        path: `${__dirname}/content/categories`,
       },
     },
     {
@@ -55,12 +55,10 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'static/images/logo.png', // This path is relative to the root of the site.
+        icon: 'static/images/logo.png',
       },
     },
     'gatsby-plugin-typescript',
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    `gatsby-plugin-netlify-cms`,
   ],
 }

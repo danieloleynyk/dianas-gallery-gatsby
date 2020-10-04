@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img, { FluidObject } from 'gatsby-image'
+import Img from 'gatsby-image'
 
 import Layout from '../../components/layout'
 import styles from './mainGallery.module.css'
@@ -61,7 +61,10 @@ export default MainGallery
 export const query = graphql`
   query {
     categories: allFile(
-      filter: { sourceInstanceName: { eq: "stills" }, extension: { eq: "md" } }
+      filter: {
+        sourceInstanceName: { eq: "sub_categories" }
+        extension: { eq: "md" }
+      }
     ) {
       edges {
         node {

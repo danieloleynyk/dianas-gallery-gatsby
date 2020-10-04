@@ -1,0 +1,49 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/images
+public_folder: /images
+
+collections:
+  - label: 'Categories'
+    name: 'categories'
+    folder: 'content/cms'
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: 'Cover Image'
+        name: 'image'
+        widget: 'file'
+        media_library:
+          config:
+            multiple: true
+      - { label: Cover OffsetX, name: offset_x, widget: number }
+      - { label: Cover OffsetY, name: offset_y, widget: number }
+      - label: 'Sub Categories'
+        name: 'sub_categories'
+        widget: list
+        fields:
+          - { label: Title, name: title, widget: string }
+          - label: 'Cover Image'
+            name: 'image'
+            widget: 'file'
+            media_library:
+              config:
+                multiple: true
+          - { label: Cover OffsetX, name: offset_x, widget: number }
+          - { label: Cover OffsetY, name: offset_y, widget: number }
+          - label: 'Gallery'
+            name: 'gallery'
+            widget: list
+            fields:
+              - label: Files
+                name: files
+                widget: list
+                fields:
+                  - label: 'File'
+                    name: 'file'
+                    widget: 'file'
+                    media_library:
+                      config:
+                        multiple: true

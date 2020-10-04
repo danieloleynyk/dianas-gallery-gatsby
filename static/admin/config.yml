@@ -18,8 +18,8 @@ collections:
         media_library:
           config:
             multiple: true
-      - { label: Cover OffsetX, name: offset_x, widget: number }
-      - { label: Cover OffsetY, name: offset_y, widget: number }
+      - { label: Cover OffsetX, name: offset_x, widget: number, default: 0 }
+      - { label: Cover OffsetY, name: offset_y, widget: number, default: 0 }
       - label: 'Sub Categories'
         name: 'sub_categories'
         widget: list
@@ -31,8 +31,22 @@ collections:
             media_library:
               config:
                 multiple: true
-          - { label: Cover OffsetX, name: offset_x, widget: number }
-          - { label: Cover OffsetY, name: offset_y, widget: number }
+          - { label: OffsetX, name: offset_x, widget: number, default: 0 }
+          - { label: OffsetY, name: offset_y, widget: number, default: 0 }
+          - {
+              label: Height,
+              name: height,
+              widget: select,
+              options: ['1', '2', '3'],
+              default: '1',
+            }
+          - {
+              label: Width,
+              name: Width,
+              widget: select,
+              options: ['1', '2', '3'],
+              default: '1',
+            }
           - label: 'Gallery'
             name: 'gallery'
             widget: list

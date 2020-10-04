@@ -1,0 +1,17 @@
+.root {
+  display: grid;
+  height: 100%;
+  overflow-y: auto;
+  background-color: black;
+
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: 200px auto;
+}
+
+.body {
+  grid-column: span 12;
+  grid-row: span 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

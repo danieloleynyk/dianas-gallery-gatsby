@@ -1,0 +1,122 @@
+.navbar {
+  grid-column: span 12;
+  z-index: 6;
+
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menubar {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 80px;
+  padding-left: 0.7em;
+  padding-top: 0.2em;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.logo > img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.icon,
+.menu_icon {
+  padding: 0.3em;
+  font-size: 1.7em;
+  transition: ease-in-out 0.2s;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.menu_icon {
+  z-index: 6;
+}
+
+.mobile_menu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.9;
+  background-color: black;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile_menu > .link {
+  color: white;
+  font-size: 1.6em;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.mobile_menu > .link:hover {
+  font-size: 1.8em;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.mobile_menu > .hr {
+  border: 0;
+  height: 1px;
+  width: 70%;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+  animation-name: hrAnimation;
+  animation-duration: 2s;
+}
+
+@keyframes hrAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar > .menubar > .icon {
+    display: none;
+  }
+
+  .logo {
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .menu_icon {
+    display: none;
+  }
+}

@@ -8,7 +8,7 @@ public_folder: /images
 collections:
   - label: 'Categories'
     name: 'categories'
-    folder: 'content/cms/{{slug}}'
+    folder: 'content/categories'
     create: true
     fields:
       - { label: Title, name: title, widget: string }

@@ -51,9 +51,13 @@ collections:
             name: 'gallery'
             widget: list
             fields:
-              - label: 'File'
-                name: 'file'
-                widget: 'file'
-                media_library:
-                  config:
-                    multiple: true
+              - label: Files
+                name: files
+                widget: list
+                fields:
+                  - label: 'File'
+                    name: 'file'
+                    widget: 'file'
+                    media_library:
+                      config:
+                        multiple: true

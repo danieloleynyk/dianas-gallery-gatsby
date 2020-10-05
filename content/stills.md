@@ -59,4 +59,7 @@ sub_categories:
     width: "1"
     image: /images/fd4986a1-dc00-4c23-bdc1-a82203fe09d4.jpg
     title: Holidays
+    gallery:
+      files:
+        - file: /images/bc6d3cea-b904-43dd-9dbc-8bda435325d1.jpg
 ---

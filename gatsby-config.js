@@ -14,15 +14,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `sub_categories`,
-        path: `${__dirname}/content/sub_categories`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `main`,
-        path: `${__dirname}/content/categories`,
+        name: `content`,
+        path: `${__dirname}/content`,
       },
     },
     {

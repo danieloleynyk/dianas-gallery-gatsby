@@ -21,7 +21,7 @@ const MainGallery = ({ data }: any) => {
                 <div className={styles.gallery_item}>
                   <div className={styles.image}>
                     <Img
-                      fluid={category.img.childImageSharp.fluid}
+                      fluid={category.image.childImageSharp.fluid}
                       className={styles.image}
                       imgStyle={{
                         objectFit: 'cover',
@@ -45,7 +45,7 @@ export default MainGallery
 export const query = graphql`
   query {
     categories: allFile(
-      filter: { sourceInstanceName: { eq: "main" }, extension: { eq: "md" } }
+      filter: { sourceInstanceName: { eq: "content" }, extension: { eq: "md" } }
     ) {
       edges {
         node {
@@ -53,14 +53,14 @@ export const query = graphql`
             frontmatter {
               offset_y
               offset_x
-              img {
+              title
+              image {
                 childImageSharp {
-                  fluid(quality: 100) {
+                  fluid(quality: 75) {
                     ...GatsbyImageSharpFluid
                   }
                 }
               }
-              title
             }
           }
         }

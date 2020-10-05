@@ -42,14 +42,14 @@ collections:
             }
           - {
               label: Width,
-              name: Width,
+              name: width,
               widget: select,
               options: ['1', '2', '3'],
               default: '1',
             }
           - label: 'Gallery'
             name: 'gallery'
-            widget: list
+            widget: object
             fields:
               - label: Files
                 name: files

@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
+import { Helmet } from 'react-helmet'
 
 import Layout from '../../components/layout'
 import styles from './index.module.css'
@@ -9,6 +10,11 @@ import clsx from 'clsx'
 const MainGallery = ({ data }: any) => {
   return (
     <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>DianaLater</title>
+      </Helmet>
+
       <div className={styles.gallery}>
         {data.categories.edges.map((categoryFetched: any) => {
           const category = categoryFetched.node.childMarkdownRemark.frontmatter

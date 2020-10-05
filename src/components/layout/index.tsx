@@ -3,10 +3,24 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import styles from './layout.module.css'
-import Navbar from '../navbar'
+import Navbar, { NavbarTemplate } from '../navbar'
 
 interface Props {
   children: ReactNode
+}
+
+export const LayoutTemplate = ({ children }: Props) => {
+  const [isMenuOpen, setMenuOpen] = useState(false)
+
+  return (
+    <div className={styles.root}>
+      <NavbarTemplate
+        isMenuOpen={isMenuOpen}
+        setMenuOpen={() => setMenuOpen(!isMenuOpen)}
+      />
+      <div className={styles.body}>{children}</div>
+    </div>
+  )
 }
 
 const Layout = ({ children }: Props) => {

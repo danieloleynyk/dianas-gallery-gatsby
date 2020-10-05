@@ -2,9 +2,83 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Layout from '../../components/layout'
+import Layout, { LayoutTemplate } from '../../components/layout'
 import styles from './mainGallery.module.css'
 import clsx from 'clsx'
+
+export interface SubCategoryType {
+  image: any
+  offset_x: number
+  offset_y: number
+  height: string
+  width: string
+  title: string
+}
+
+interface Props {
+  subCategories: SubCategoryType[]
+}
+
+export const MainGalleryTemplate = ({ subCategories }: Props) => {
+  const availableWidths: { [id: number]: any } = {
+    1: styles.w1,
+    2: styles.w2,
+    3: styles.w3,
+    4: styles.w4,
+    5: styles.w5,
+    6: styles.w6,
+  }
+
+  const availableHeights: { [id: number]: any } = {
+    1: styles.h1,
+    2: styles.h2,
+    3: styles.h3,
+    4: styles.h4,
+    5: styles.h5,
+    6: styles.h6,
+  }
+
+  return (
+    <LayoutTemplate>
+      <div
+        className={styles.gallery}
+        style={{
+          width: 'calc(6 * 155px)',
+          gridTemplateColumns: 'repeat(6, 150px)',
+          gridAutoRows: '150px 180px',
+          padding: 0,
+        }}
+      >
+        {subCategories.map((category: SubCategoryType, index: number) => {
+          return (
+            <div
+              key={index}
+              className={clsx(
+                styles.gallery_container,
+                availableHeights[parseInt(category.height)],
+                availableWidths[parseInt(category.width)]
+              )}
+            >
+              <div className={styles.gallery_item}>
+                <div className={styles.image}>
+                  <img
+                    src={category.image}
+                    style={{
+                      objectFit: 'cover',
+                      objectPosition: `${category.offset_x}% ${category.offset_y}%`,
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </LayoutTemplate>
+  )
+}
 
 const MainGallery = ({ data }: any) => {
   const categories =

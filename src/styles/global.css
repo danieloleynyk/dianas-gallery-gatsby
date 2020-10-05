@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&family=Suez+One&display=swap');
+
 html,
 body,
 #___gatsby {
   height: 100%;
+  font-family: 'Frank Ruhl Libre', serif;
 }
 
 body {

@@ -37,14 +37,14 @@ collections:
               label: Height,
               name: height,
               widget: select,
-              options: ['1', '2', '3'],
+              options: ['1', '2', '3', '4', '5', '6'],
               default: '1',
             }
           - {
               label: Width,
               name: width,
               widget: select,
-              options: ['1', '2', '3'],
+              options: ['1', '2', '3', '4', '5', '6'],
               default: '1',
             }
           - label: 'Gallery'

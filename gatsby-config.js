@@ -34,6 +34,12 @@ module.exports = {
               maxWidth: 2048,
             },
           },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+              destinationDir: 'static',
+            },
+          },
         ],
       },
     },
@@ -52,6 +58,12 @@ module.exports = {
       },
     },
     'gatsby-plugin-typescript',
-    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+        htmlTitle: 'DianaLater - Adminstrator Panel',
+      },
+    },
   ],
 }

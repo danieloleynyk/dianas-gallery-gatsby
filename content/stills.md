@@ -1,5 +1,5 @@
 ---
-title: סטילס
+title: Stills
 image: /images/1.jpg
 offset_x: 0
 offset_y: 0

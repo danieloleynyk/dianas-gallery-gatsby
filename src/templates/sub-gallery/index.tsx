@@ -81,7 +81,7 @@ const ChosenGallery = ({ data, location }: any) => {
                     >
                       <ReactPlayer
                         controls
-                        url={`/images/${asset.video.relativePath}`}
+                        url={`/assets/${asset.video.relativePath}`}
                         height="80%"
                         width="80%"
                       />
@@ -124,6 +124,7 @@ export const query = graphql`
                       }
                     }
                     video {
+                      publicURL
                       relativePath
                       extension
                     }

@@ -61,3 +61,10 @@ collections:
                     media_library:
                       config:
                         multiple: true
+                  - label: 'Video'
+                    name: 'video'
+                    required: false
+                    widget: 'file'
+                    media_library:
+                      config:
+                        multiple: true

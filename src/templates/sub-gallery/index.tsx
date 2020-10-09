@@ -1,4 +1,4 @@
-import React, { ReactChild, ReactNode } from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import Img, { FluidObject } from 'gatsby-image'
 
@@ -7,16 +7,18 @@ import styles from './subGallery.module.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { Carousel } from 'react-responsive-carousel'
 
+import ReactPlayer from 'react-player'
+
 const ChosenGallery = ({ data, location }: any) => {
   const { pathname } = location
   const subCategoryTitle = String(pathname).split('/').slice(-1)[0]
 
-  const images = data.category.edges[0].node.childMarkdownRemark.frontmatter.sub_categories
+  const assets = data.category.edges[0].node.childMarkdownRemark.frontmatter.sub_categories
     .filter(
       (subCategory: any) =>
         String(subCategory.title).toLowerCase() === subCategoryTitle
     )[0]
-    .gallery.files.map((file: any) => file.file)
+    .gallery.files.map((file: any) => file)
 
   const customRenderThumbs = (children: any) =>
     children.map((item: { key: number }) => {
@@ -25,9 +27,10 @@ const ChosenGallery = ({ data, location }: any) => {
           style={{
             height: '7vh',
           }}
+          key={item.key}
         >
           <Img
-            fluid={images[item.key].childImageSharp.fluid}
+            fluid={assets[item.key].file.childImageSharp.fluid}
             loading="lazy"
             style={{ height: '100%' }}
             imgStyle={{
@@ -50,7 +53,7 @@ const ChosenGallery = ({ data, location }: any) => {
           renderThumbs={customRenderThumbs}
           infiniteLoop
         >
-          {images.map((image: any, index: number) => {
+          {assets.map((asset: any, index: number) => {
             return (
               <div
                 className={styles.image}
@@ -60,14 +63,30 @@ const ChosenGallery = ({ data, location }: any) => {
                   width: '100%',
                 }}
               >
-                <Img
-                  fluid={image.childImageSharp.fluid}
-                  loading="lazy"
-                  className={styles.image}
-                  imgStyle={{
-                    objectFit: 'contain',
-                  }}
-                />
+                {asset.video === null ? (
+                  <Img
+                    fluid={asset.file.childImageSharp.fluid}
+                    loading="lazy"
+                    className={styles.image}
+                    imgStyle={{
+                      objectFit: 'contain',
+                    }}
+                  />
+                ) : (
+                  asset.video.extension == 'mp4' && (
+                    <div
+                      className={styles.video_player}
+                      style={{ height: '60vh', width: '100%' }}
+                    >
+                      <ReactPlayer
+                        controls
+                        url={`/images/${asset.video.relativePath}`}
+                        height="80%"
+                        width="80%"
+                      />
+                    </div>
+                  )
+                )}
               </div>
             )
           })}
@@ -102,6 +121,10 @@ export const query = graphql`
                           ...GatsbyImageSharpFluid
                         }
                       }
+                    }
+                    video {
+                      relativePath
+                      extension
                     }
                   }
                 }

@@ -25,7 +25,7 @@ const MainGalleryPreview = ({ entry, getAsset }: any) => {
       />
     )
   } else {
-    return <div>Fill In the sub categories :)</div>
+    return <div>Fill In the sub categories :);</div>
   }
 }
 

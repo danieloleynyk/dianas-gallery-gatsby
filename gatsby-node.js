@@ -13,18 +13,7 @@ exports.onCreatePage = ({ page, actions }) => {
         ...page,
         path: '/',
       })
-    } else if (
-      page.componentPath ===
-      `${__dirname}/src/pages/mainStillsGallery/index.tsx`
-    ) {
-      deletePage(page)
-
-      // create a new page but with '/' as path
-      createPage({
-        ...page,
-        path: '/stills',
-      })
-    }
+    } 
 
     resolve()
   })

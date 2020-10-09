@@ -13,6 +13,7 @@ const ChosenGallery = ({ data, location }: any) => {
   const { pathname } = location
   const subCategoryTitle = String(pathname).split('/').slice(-1)[0]
 
+  console.log(data)
   const assets = data.category.edges[0].node.childMarkdownRemark.frontmatter.sub_categories
     .filter(
       (subCategory: any) =>

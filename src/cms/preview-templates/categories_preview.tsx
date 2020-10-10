@@ -2,20 +2,7 @@ import React from 'react'
 
 import { LayoutTemplate } from '../../components/layout'
 import Gallery from '../../components/gallery'
-import { Image } from '../../components/gallery/types'
-
-export interface ImageTemplate {
-  image: string
-  offset_x: number
-  offset_y: number
-  height: string
-  width: string
-  title: string
-}
-
-interface Props {
-  images: Image[]
-}
+import { Props, Category, SubCategory } from './types'
 
 const GalleryTemplate = ({ images }: Props) => {
   return (
@@ -35,45 +22,60 @@ const GalleryTemplate = ({ images }: Props) => {
 
 const CategoriesPreview = ({ entry, getAsset }: any) => {
   const data = entry.getIn(['data']).toJS()
-  const subCategories: ImageTemplate[] = data.sub_categories
+  const categories: Category[] = data.categories
 
   if (
-    subCategories.length > 0 &&
-    subCategories.every((subCategory: ImageTemplate) =>
-      ['image', 'title', 'height', 'width', 'offset_x', 'offset_y'].every(
-        (field: string) => field in subCategory
-      )
+    categories.length > 0 &&
+    categories.every(
+      (category: Category) =>
+        'sub_categories' in category &&
+        category.sub_categories.every((subCategory: SubCategory) =>
+          ['image', 'title', 'height', 'width', 'offset_x', 'offset_y'].every(
+            (field: string) => field in subCategory
+          )
+        )
     )
   ) {
     return (
       <div>
         <div style={{ margin: '1em' }}>
+          <h1 style={{ textDecoration: 'underline' }}>Main Page</h1>
           <GalleryTemplate
-            images={subCategories.map((subCategory: ImageTemplate) => ({
-              source: getAsset(subCategory.image),
-              width: parseInt(subCategory.width),
-              height: parseInt(subCategory.height),
-              offset_x: subCategory.offset_x,
-              offset_y: subCategory.offset_y,
-              link: `/gallery/${String(subCategory.title).toLowerCase()}`,
-              title: subCategory.title,
+            images={categories.map((category: Category) => ({
+              source: getAsset(category.image),
+              width: parseInt(category.width),
+              height: parseInt(category.height),
+              offset_x: category.offset_x,
+              offset_y: category.offset_y,
+              link: `/gallery/${String(category.title).toLowerCase()}`,
+              title: category.title,
             }))}
           />
         </div>
-        {/* <div style={{ margin: '1em' }}>
-          <GalleryTemplate
-            subCategories={subCategories.map(
-              (subCategory: SubCategoryType) => ({
-                ...subCategory,
-                image: getAsset(subCategory.image),
-              })
-            )}
-          />
-        </div> */}
+        {categories.map((category: Category) => {
+          const subCategories = category.sub_categories
+
+          return (
+            <div style={{ margin: '1em' }}>
+              <h1 style={{ textDecoration: 'underline' }}>{category.title}</h1>
+              <GalleryTemplate
+                images={subCategories.map((subCategory: SubCategory) => ({
+                  source: getAsset(subCategory.image),
+                  width: parseInt(subCategory.width),
+                  height: parseInt(subCategory.height),
+                  offset_x: subCategory.offset_x,
+                  offset_y: subCategory.offset_y,
+                  link: `/gallery/${String(subCategory.title).toLowerCase()}`,
+                  title: subCategory.title,
+                }))}
+              />
+            </div>
+          )
+        })}
       </div>
     )
   } else {
-    return <div>Fill In the sub categories :);</div>
+    return <div>Fill In the sub categories...</div>
   }
 }
 

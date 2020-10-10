@@ -1,5 +1,5 @@
 backend:
-  name: test-repo
+  name: git-gateway
   branch: master
 
 media_folder: static/assets
@@ -11,11 +11,12 @@ collections:
     folder: 'content/'
     create: true
     fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
       - label: 'Categories'
         name: 'categories'
         widget: 'list'
         fields:
-          - { label: Title, name: title, widget: string }
+          - { label: Title, name: title, widget: 'string' }
           - label: 'Cover Image'
             name: 'image'
             widget: 'file'
@@ -25,43 +26,53 @@ collections:
           - {
               label: Height,
               name: height,
-              widget: select,
+              widget: 'select',
               options: ['1', '2', '3', '4', '5', '6'],
               default: '1',
             }
           - {
               label: Width,
               name: width,
-              widget: select,
+              widget: 'select',
               options: ['1', '2', '3', '4', '5', '6'],
               default: '1',
             }
-          - { label: Cover OffsetX, name: offset_x, widget: number, default: 0 }
-          - { label: Cover OffsetY, name: offset_y, widget: number, default: 0 }
+          - {
+              label: Cover OffsetX,
+              name: offset_x,
+              widget: 'number',
+              default: 0,
+            }
+          - {
+              label: Cover OffsetY,
+              name: offset_y,
+              widget: 'number',
+              default: 0,
+            }
           - label: 'Sub Categories'
             name: 'sub_categories'
             widget: list
             fields:
-              - { label: Title, name: title, widget: string }
+              - { label: Title, name: title, widget: 'string' }
               - label: 'Cover Image'
                 name: 'image'
                 widget: 'file'
                 media_library:
                   config:
                     multiple: true
-              - { label: OffsetX, name: offset_x, widget: number, default: 0 }
-              - { label: OffsetY, name: offset_y, widget: number, default: 0 }
+              - { label: OffsetX, name: offset_x, widget: 'number', default: 0 }
+              - { label: OffsetY, name: offset_y, widget: 'number', default: 0 }
               - {
                   label: Height,
                   name: height,
-                  widget: select,
+                  widget: 'select',
                   options: ['1', '2', '3', '4', '5', '6'],
                   default: '1',
                 }
               - {
                   label: Width,
                   name: width,
-                  widget: select,
+                  widget: 'select',
                   options: ['1', '2', '3', '4', '5', '6'],
                   default: '1',
                 }
@@ -72,7 +83,7 @@ collections:
                   - label: Files
                     name: files
                     summary: '{{fields.file}}'
-                    widget: list
+                    widget: 'list'
                     fields:
                       - label: 'File'
                         name: 'file'

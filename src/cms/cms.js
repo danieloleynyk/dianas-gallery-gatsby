@@ -1,5 +1,5 @@
 import CMS from 'netlify-cms-app'
 
-import MainGalleryPreview from './preview-templates/MainGalleryTemplate'
+import CategoriesPreview from './preview-templates/categories_preview.tsx'
 
-CMS.registerPreviewTemplate('categories', MainGalleryPreview)
+CMS.registerPreviewTemplate('categories', CategoriesPreview)

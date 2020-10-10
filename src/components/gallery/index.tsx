@@ -11,8 +11,7 @@ interface Props {
   style?: CSSProperties
 }
 
-const Gallery = ({ images }: Props) => {
-  console.log(images)
+const Gallery = ({ images, style }: Props) => {
   const availableWidths: { [id: number]: any } = {
     1: styles.w1,
     2: styles.w2,
@@ -32,7 +31,7 @@ const Gallery = ({ images }: Props) => {
   }
 
   return (
-    <div className={styles.gallery} style={{}}>
+    <div className={styles.gallery} style={style}>
       {images.map((image: Image, index: number) => {
         return (
           <div

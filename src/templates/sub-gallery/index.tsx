@@ -12,18 +12,25 @@ import ReactPlayer from 'react-player/lazy'
 
 const ChosenGallery = ({ data, location }: any) => {
   const { pathname } = location
-  const mainCategoryTitle =
-    data.category.edges[0].node.childMarkdownRemark.frontmatter.title
+  const mainCategoryTitle = String(pathname).split('/').slice(-2)[0]
   const subCategoryTitle = String(pathname).split('/').slice(-1)[0]
 
-  const subCategory = data.category.edges[0].node.childMarkdownRemark.frontmatter.sub_categories.find(
-    (subCategory: any) =>
-      String(subCategory.title).toLowerCase() === subCategoryTitle &&
-      'gallery' in subCategory &&
-      subCategory.gallery !== null &&
-      'files' in subCategory.gallery &&
-      subCategory.gallery.files !== null
+  const category = data.category.edges[0].node.childMarkdownRemark.frontmatter.categories.find(
+    (category: any) =>
+      String(category.title).toLowerCase() === mainCategoryTitle
   )
+
+  const subCategory =
+    category !== undefined
+      ? category.sub_categories.find(
+          (subCategory: any) =>
+            String(subCategory.title).toLowerCase() === subCategoryTitle &&
+            'gallery' in subCategory &&
+            subCategory.gallery !== null &&
+            'files' in subCategory.gallery &&
+            subCategory.gallery.files !== null
+        )
+      : undefined
 
   const assets = subCategory !== undefined ? [...subCategory.gallery.files] : []
 
@@ -115,35 +122,32 @@ const ChosenGallery = ({ data, location }: any) => {
 export default ChosenGallery
 
 export const query = graphql`
-  query($category: String!) {
-    category: allFile(
-      filter: {
-        sourceInstanceName: { eq: "content" }
-        childMarkdownRemark: { frontmatter: { title: { eq: $category } } }
-      }
-    ) {
+  query {
+    category: allFile(filter: { sourceInstanceName: { eq: "content" } }) {
       edges {
         node {
           id
           childMarkdownRemark {
             frontmatter {
-              title
-              sub_categories {
+              categories {
                 title
-                gallery {
-                  files {
-                    file {
-                      childImageSharp {
-                        fluid(quality: 100) {
-                          ...GatsbyImageSharpFluid
+                sub_categories {
+                  title
+                  gallery {
+                    files {
+                      file {
+                        childImageSharp {
+                          fluid(quality: 100) {
+                            ...GatsbyImageSharpFluid
+                          }
                         }
+                        relativePath
                       }
-                      relativePath
-                    }
-                    video {
-                      publicURL
-                      relativePath
-                      extension
+                      video {
+                        publicURL
+                        relativePath
+                        extension
+                      }
                     }
                   }
                 }

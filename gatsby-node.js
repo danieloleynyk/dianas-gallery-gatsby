@@ -29,9 +29,11 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             childMarkdownRemark {
               frontmatter {
-                title
-                sub_categories {
+                categories {
                   title
+                  sub_categories {
+                    title
+                  }
                 }
               }
             }
@@ -42,27 +44,24 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   result.data.allFile.edges.forEach(({ node }) => {
-    createPage({
-      path: path.join("gallery", String(node.childMarkdownRemark.frontmatter.title).toLowerCase()),
-      component: path.resolve(`./src/templates/index.tsx`),
-      context: {
-        category: node.childMarkdownRemark.frontmatter.title,
-      },
-    })
 
-    node.childMarkdownRemark.frontmatter.sub_categories.forEach(
-      (sub_category) =>
-        createPage({
-          path: path.join(
-            "gallery",
-            String(node.childMarkdownRemark.frontmatter.title).toLowerCase(),
-            String(sub_category.title).toLowerCase()
-          ),
-          component: path.resolve(`./src/templates/sub-gallery/index.tsx`),
-          context: {
-            category: node.childMarkdownRemark.frontmatter.title,
-          },
-        })
-    )
+    node.childMarkdownRemark.frontmatter.categories.forEach((category) => {
+      createPage({
+        path: path.join("gallery", String(category.title).toLowerCase()),
+        component: path.resolve(`./src/templates/main_gallery.tsx`),
+      })
+
+      category.sub_categories.forEach(
+        (sub_category) =>
+          createPage({
+            path: path.join(
+              "gallery",
+              String(category.title).toLowerCase(),
+              String(sub_category.title).toLowerCase()
+            ),
+            component: path.resolve(`./src/templates/sub-gallery/index.tsx`),
+          })
+      )
+    })
   })
 }

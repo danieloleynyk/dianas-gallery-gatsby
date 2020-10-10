@@ -13,19 +13,19 @@ const MainGallery = ({ data }: any) => {
       </Helmet>
 
       <Gallery
-        images={data.categories.edges.map((categoryFetched: any) => {
-          const category = categoryFetched.node.childMarkdownRemark.frontmatter
-
-          return {
-            source: category.image.childImageSharp.fluid,
-            width: parseInt(category.width),
-            height: parseInt(category.height),
-            offset_x: category.offset_x,
-            offset_y: category.offset_y,
-            link: `/gallery/${String(category.title).toLowerCase()}`,
-            title: category.title,
+        images={data.output.edges[0].node.childMarkdownRemark.frontmatter.categories.map(
+          (category: any) => {
+            return {
+              source: category.image.childImageSharp.fluid,
+              width: parseInt(category.width),
+              height: parseInt(category.height),
+              offset_x: category.offset_x,
+              offset_y: category.offset_y,
+              link: `/gallery/${String(category.title).toLowerCase()}`,
+              title: category.title,
+            }
           }
-        })}
+        )}
       />
     </Layout>
   )
@@ -35,22 +35,24 @@ export default MainGallery
 
 export const query = graphql`
   query {
-    categories: allFile(
+    output: allFile(
       filter: { sourceInstanceName: { eq: "content" }, extension: { eq: "md" } }
     ) {
       edges {
         node {
           childMarkdownRemark {
             frontmatter {
-              offset_y
-              offset_x
-              width
-              height
-              title
-              image {
-                childImageSharp {
-                  fluid(quality: 75) {
-                    ...GatsbyImageSharpFluid
+              categories {
+                offset_y
+                offset_x
+                width
+                height
+                title
+                image {
+                  childImageSharp {
+                    fluid(quality: 75) {
+                      ...GatsbyImageSharpFluid
+                    }
                   }
                 }
               }

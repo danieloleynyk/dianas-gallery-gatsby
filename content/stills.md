@@ -3,6 +3,8 @@ title: Stills
 image: /assets/1.jpg
 offset_x: 0
 offset_y: 0
+height: '2'
+width: '3'
 sub_categories:
   - offset_x: 50
     offset_y: 0

@@ -18,6 +18,20 @@ collections:
         media_library:
           config:
             multiple: true
+      - {
+          label: Height,
+          name: height,
+          widget: select,
+          options: ['1', '2', '3', '4', '5', '6'],
+          default: '1',
+        }
+      - {
+          label: Width,
+          name: width,
+          widget: select,
+          options: ['1', '2', '3', '4', '5', '6'],
+          default: '1',
+        }
       - { label: Cover OffsetX, name: offset_x, widget: number, default: 0 }
       - { label: Cover OffsetY, name: offset_y, widget: number, default: 0 }
       - label: 'Sub Categories'
@@ -53,6 +67,7 @@ collections:
             fields:
               - label: Files
                 name: files
+                summary: '{{fields.file}}'
                 widget: list
                 fields:
                   - label: 'File'

@@ -5,7 +5,7 @@ exports.onCreatePage = ({ page, actions }) => {
 
   return new Promise((resolve) => {
     // if the page component is the index page component
-    if (page.componentPath === `${__dirname}/src/pages/index/index.tsx`) {
+    if (page.componentPath === `${__dirname}/src/pages/index.tsx`) {
       deletePage(page)
 
       // create a new page but with '/' as path
@@ -43,8 +43,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allFile.edges.forEach(({ node }) => {
     createPage({
-      path: String(node.childMarkdownRemark.frontmatter.title).toLowerCase(),
-      component: path.resolve(`./src/templates/main-gallery/index.tsx`),
+      path: path.join("gallery", String(node.childMarkdownRemark.frontmatter.title).toLowerCase()),
+      component: path.resolve(`./src/templates/index.tsx`),
       context: {
         category: node.childMarkdownRemark.frontmatter.title,
       },
@@ -54,6 +54,7 @@ exports.createPages = async ({ graphql, actions }) => {
       (sub_category) =>
         createPage({
           path: path.join(
+            "gallery",
             String(node.childMarkdownRemark.frontmatter.title).toLowerCase(),
             String(sub_category.title).toLowerCase()
           ),

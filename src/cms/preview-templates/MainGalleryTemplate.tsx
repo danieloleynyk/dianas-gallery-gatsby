@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-  MainGalleryTemplate,
-  SubCategoryType,
-} from '../../templates/main-gallery'
+import { MainGalleryTemplate, SubCategoryType } from '../../templates'
 
 const MainGalleryPreview = ({ entry, getAsset }: any) => {
   const data = entry.getIn(['data']).toJS()

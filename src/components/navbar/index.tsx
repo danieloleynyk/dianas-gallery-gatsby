@@ -26,12 +26,12 @@ export const NavbarTemplate = (navbarProps: NavbarProps) => {
 
       <div className={styles.menubar}>
         <SocialMediaSet />
+        <IconContext.Provider value={{ color: 'white' }}>
+          <div className={styles.menu_icon} onClick={navbarProps.setMenuOpen}>
+            {navbarProps.isMenuOpen ? <RiCloseLine /> : <RiMenuLine />}
+          </div>
+        </IconContext.Provider>
       </div>
-      <IconContext.Provider value={{ color: 'white' }}>
-        <div className={styles.menu_icon} onClick={navbarProps.setMenuOpen}>
-          {navbarProps.isMenuOpen ? <RiCloseLine /> : <RiMenuLine />}
-        </div>
-      </IconContext.Provider>
 
       {navbarProps.isMenuOpen && (
         <div className={styles.mobile_menu}>

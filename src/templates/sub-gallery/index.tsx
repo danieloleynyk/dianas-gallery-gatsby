@@ -16,12 +16,16 @@ const ChosenGallery = ({ data, location }: any) => {
     data.category.edges[0].node.childMarkdownRemark.frontmatter.title
   const subCategoryTitle = String(pathname).split('/').slice(-1)[0]
 
-  const assets = data.category.edges[0].node.childMarkdownRemark.frontmatter.sub_categories
-    .filter(
-      (subCategory: any) =>
-        String(subCategory.title).toLowerCase() === subCategoryTitle
-    )[0]
-    .gallery.files.map((file: any) => file)
+  const subCategory = data.category.edges[0].node.childMarkdownRemark.frontmatter.sub_categories.find(
+    (subCategory: any) =>
+      String(subCategory.title).toLowerCase() === subCategoryTitle &&
+      'gallery' in subCategory &&
+      subCategory.gallery !== null &&
+      'files' in subCategory.gallery &&
+      subCategory.gallery.files !== null
+  )
+
+  const assets = subCategory !== undefined ? [...subCategory.gallery.files] : []
 
   const customRenderThumbs = (children: any) =>
     children.map((item: { key: number }) => {

@@ -8,7 +8,6 @@ import { IconContext } from 'react-icons'
 import {
   RiFacebookCircleFill,
   RiInstagramFill,
-  RiPinterestFill,
   RiMenuLine,
   RiCloseLine,
 } from 'react-icons/ri'
@@ -24,6 +23,7 @@ export const NavbarTemplate = (navbarProps: NavbarProps) => {
       <Link to="/">
         <div className={styles.logo}></div>
       </Link>
+
       <div className={styles.menubar}>
         <SocialMediaSet />
       </div>
@@ -75,14 +75,15 @@ const Navbar = (navbarProps: NavbarProps) => {
           />
         </div>
       </Link>
+
       <div className={styles.menubar}>
         <SocialMediaSet />
+        <IconContext.Provider value={{ color: 'white' }}>
+          <div className={styles.menu_icon} onClick={navbarProps.setMenuOpen}>
+            {navbarProps.isMenuOpen ? <RiCloseLine /> : <RiMenuLine />}
+          </div>
+        </IconContext.Provider>
       </div>
-      <IconContext.Provider value={{ color: 'white' }}>
-        <div className={styles.menu_icon} onClick={navbarProps.setMenuOpen}>
-          {navbarProps.isMenuOpen ? <RiCloseLine /> : <RiMenuLine />}
-        </div>
-      </IconContext.Provider>
 
       {navbarProps.isMenuOpen && (
         <div className={styles.mobile_menu}>
@@ -104,17 +105,16 @@ const SocialMediaSet = () => (
   <>
     <IconContext.Provider value={{ color: 'white' }}>
       <div className={styles.icon}>
-        <RiInstagramFill />
+        <a href="https://www.instagram.com/diana_photographer/" target="_blank">
+          <RiInstagramFill />
+        </a>
       </div>
     </IconContext.Provider>
     <IconContext.Provider value={{ color: 'white' }}>
       <div className={styles.icon}>
-        <RiFacebookCircleFill />
-      </div>
-    </IconContext.Provider>
-    <IconContext.Provider value={{ color: 'white' }}>
-      <div className={styles.icon}>
-        <RiPinterestFill />
+        <a href="https://www.facebook.com/diana1later8artist/" target="_blank">
+          <RiFacebookCircleFill />
+        </a>
       </div>
     </IconContext.Provider>
   </>

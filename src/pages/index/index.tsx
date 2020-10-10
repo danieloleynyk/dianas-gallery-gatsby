@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { Helmet } from 'react-helmet'
-
 import Layout from '../../components/layout'
 import styles from './index.module.css'
 import clsx from 'clsx'

@@ -17,6 +17,13 @@
   align-items: center;
 }
 
+.menu_links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo {
   height: 80px;
   padding-left: 0.7em;
@@ -41,10 +48,15 @@
 
 .icon:hover {
   cursor: pointer;
+  transform: scale(1.2);
 }
 
 .menu_icon {
   z-index: 6;
+}
+
+.menu_icon:hover {
+  transform: scale(1.2);
 }
 
 .mobile_menu {
@@ -77,8 +89,8 @@
 }
 
 .mobile_menu > .link:hover {
-  font-size: 1.8em;
-  transition: 0.2s ease-in-out;
+  transform: scale(1.2);
+  transition: 0.4s ease-in-out;
   cursor: pointer;
 }
 
@@ -105,18 +117,12 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   .navbar > .menubar > .icon {
     display: none;
   }
 
   .logo {
     height: 60px;
-  }
-}
-
-@media screen and (min-width: 500px) {
-  .menu_icon {
-    display: none;
   }
 }

@@ -8,6 +8,8 @@
   grid-auto-flow: dense;
   padding-left: 1em;
   padding-right: 1em;
+  padding-top: 8em;
+  box-sizing: border-box;
 }
 
 .gallery_item {
@@ -44,6 +46,12 @@
   pointer-events: none;
   z-index: 4;
   transition: 0.3s ease-in-out;
+
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
 }
 
 .gallery_item:hover > .text {
@@ -99,6 +107,7 @@
     height: 100%;
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: 300px;
+    padding-top: 0;
   }
   .w1,
   .w2,

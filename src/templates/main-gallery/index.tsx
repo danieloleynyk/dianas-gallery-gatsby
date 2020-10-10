@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -101,6 +102,10 @@ const MainGallery = ({ data }: any) => {
   return (
     <Layout>
       <div className={styles.gallery}>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>DianaLater - {mainCategoryTitle}</title>
+        </Helmet>
         {categories.map((category: any, index: number) => {
           return (
             <div

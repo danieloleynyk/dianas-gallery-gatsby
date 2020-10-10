@@ -1,19 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
-import Img, { FluidObject } from 'gatsby-image'
+import Img from 'gatsby-image'
 
 import Layout from '../../components/layout'
 import styles from './subGallery.module.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { Carousel } from 'react-responsive-carousel'
 
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player/lazy'
 
 const ChosenGallery = ({ data, location }: any) => {
   const { pathname } = location
+  const mainCategoryTitle =
+    data.category.edges[0].node.childMarkdownRemark.frontmatter.title
   const subCategoryTitle = String(pathname).split('/').slice(-1)[0]
 
-  console.log(data)
   const assets = data.category.edges[0].node.childMarkdownRemark.frontmatter.sub_categories
     .filter(
       (subCategory: any) =>
@@ -47,6 +49,15 @@ const ChosenGallery = ({ data, location }: any) => {
 
   return (
     <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          DianaLater - {mainCategoryTitle} -
+          {' ' +
+            subCategoryTitle.charAt(0).toUpperCase() +
+            subCategoryTitle.slice(1)}
+        </title>
+      </Helmet>
       <div className={styles.root}>
         <Carousel
           className={styles.carousel}
@@ -112,6 +123,7 @@ export const query = graphql`
           id
           childMarkdownRemark {
             frontmatter {
+              title
               sub_categories {
                 title
                 gallery {
@@ -122,6 +134,7 @@ export const query = graphql`
                           ...GatsbyImageSharpFluid
                         }
                       }
+                      relativePath
                     }
                     video {
                       publicURL

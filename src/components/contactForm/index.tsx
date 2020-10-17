@@ -73,7 +73,12 @@ const ContactForm = () => {
           <p>
             <label>
               Phone: <br />
-              <input type="tel" name="phone" required />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="123-4567890"
+                required
+              />
             </label>
           </p>
           <p>

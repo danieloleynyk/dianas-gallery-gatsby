@@ -15,30 +15,6 @@ const ContactForm = () => {
       .join('&')
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const form = e.currentTarget
-
-    console.log({
-      'form-name': 'contact',
-      name: name,
-      email: email,
-      message: message,
-    })
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': form.name,
-        name: name,
-        email: email,
-        message: message,
-      }),
-    })
-      .then(() => navigate(form.action))
-      .catch((error) => alert(error))
-  }
-
   return (
     <div className={styles.root}>
       <h1 style={{ fontSize: '1.5em', width: '80%' }}>
@@ -51,7 +27,6 @@ const ContactForm = () => {
           action="/contact/thanks/"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
         >
           <p>
             <label>

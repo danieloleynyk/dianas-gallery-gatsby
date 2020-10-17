@@ -63,7 +63,10 @@ const ChosenGallery = ({ data, location }: any) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          DianaLater - {mainCategoryTitle} -
+          DianaLater -{' '}
+          {mainCategoryTitle.charAt(0).toUpperCase() +
+            mainCategoryTitle.slice(1)}{' '}
+          -
           {' ' +
             subCategoryTitle.charAt(0).toUpperCase() +
             subCategoryTitle.slice(1)}

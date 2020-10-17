@@ -21,7 +21,11 @@ const MainGallery = ({ data, location }: any) => {
     <Layout>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>DianaLater - {mainCategoryTitle}</title>
+        <title>
+          DianaLater -{' '}
+          {mainCategoryTitle.charAt(0).toUpperCase() +
+            mainCategoryTitle.slice(1)}
+        </title>
       </Helmet>
       <Gallery
         images={category.sub_categories.map((sub_category: any) => ({

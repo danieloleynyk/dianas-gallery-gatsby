@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react'
 import Layout from '../../components/layout'
+import Helmet from 'react-helmet'
 
 const ThanksPage = () => {
   const rootDiv: CSSProperties = {
@@ -11,6 +12,10 @@ const ThanksPage = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>DianaLater - Contact</title>
+      </Helmet>
       <div style={rootDiv}>
         <div
           style={{

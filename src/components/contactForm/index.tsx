@@ -103,7 +103,11 @@ const ContactForm = () => {
             </label>
           </p>
           <p>
-            <button type="submit" className={styles.submit_button}>
+            <button
+              type="submit"
+              className={styles.submit_button}
+              disabled={isLoading}
+            >
               {isLoading ? (
                 <IconContext.Provider value={{ color: 'white' }}>
                   <div className={styles.icon}>

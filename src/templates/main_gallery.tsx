@@ -11,10 +11,13 @@ const MainGallery = ({ data, location }: any) => {
 
   const categories =
     data.output.edges[0].node.childMarkdownRemark.frontmatter.categories
-  const mainCategoryTitle = String(pathname).split('/').slice(-1)[0]
+
+  const urlParams = String(pathname).split('/')
+  const mainCategoryTitle = String(urlParams.pop()) || String(urlParams.pop())
+
   const category = categories.find(
     (category: any) =>
-      String(category.title).toLowerCase() === mainCategoryTitle
+      String(category.title).toLowerCase() === mainCategoryTitle.toLowerCase()
   )
 
   return (

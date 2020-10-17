@@ -1,10 +1,10 @@
 .root {
   display: grid;
   height: 100%;
-  overflow-y: auto;
+  overflow-y: hidden;
   background-color: black;
 
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-rows: repeat(13, 1fr);
   grid-template-columns: 200px auto;
 }
 
@@ -15,4 +15,22 @@
   justify-content: center;
   align-items: center;
   padding: 1em;
+  overflow-y: auto;
+}
+
+.body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+.body::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+.body::-webkit-scrollbar-thumb {
+  background-color: white; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid black; /* creates padding around scroll thumb */
+}
+
+.footer {
+  grid-column: span 12;
+  grid-row: 1;
 }

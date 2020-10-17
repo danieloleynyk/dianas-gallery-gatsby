@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import styles from './layout.module.css'
 import Navbar, { NavbarTemplate } from '../navbar'
+import Footer from '../footer'
 
 interface Props {
   children: ReactNode
@@ -46,6 +47,7 @@ const Layout = ({ children }: Props) => {
             setMenuOpen={() => setMenuOpen(!isMenuOpen)}
           />
           <div className={styles.body}>{children}</div>
+          <Footer />
         </div>
       )}
     />

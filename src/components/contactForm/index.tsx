@@ -31,11 +31,9 @@ const ContactForm = () => {
             </label>
           </p>
           <p>
-            <input
-              type="submit"
-              value="Submit"
-              className={styles.submit_button}
-            />
+            <button type="submit" className={styles.submit_button}>
+              Submit
+            </button>
           </p>
         </form>
       </div>

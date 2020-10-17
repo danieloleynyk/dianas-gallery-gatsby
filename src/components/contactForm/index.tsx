@@ -18,6 +18,13 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
+
+    console.log({
+      'form-name': 'contact',
+      name: name,
+      email: email,
+      message: message,
+    })
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -40,7 +47,7 @@ const ContactForm = () => {
       <div>
         <form
           name="contact"
-          method="post"
+          method="POST"
           action="/contact/thanks/"
           data-netlify="true"
           data-netlify-honeypot="bot-field"

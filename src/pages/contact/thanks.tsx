@@ -21,7 +21,7 @@ const ThanksPage = () => {
           }}
         >
           <h1 style={{ color: 'white', fontSize: '4rem', margin: 0 }}>
-            Thanks You For Your Submission
+            Thank You For Your Submission
           </h1>
           <h2
             style={{ color: 'white', fontSize: '1.5rem', margin: 0 }}

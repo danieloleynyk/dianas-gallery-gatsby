@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql, Link } from 'gatsby'
+import { StaticQuery, graphql, Link, navigate } from 'gatsby'
 import Img from 'gatsby-image'
 
 import styles from './navbar.module.css'
@@ -38,7 +38,9 @@ export const NavbarTemplate = (navbarProps: NavbarProps) => {
           <hr className={styles.hr} />
           <h2 className={styles.link}>Home</h2>
           <h2 className={styles.link}>About</h2>
-          <h2 className={styles.link}>Contact</h2>
+          <Link to="/contact">
+            <h2 className={styles.link}>Contact</h2>
+          </Link>
           <div className={styles.menubar}>
             <SocialMediaSet />
           </div>
@@ -88,9 +90,15 @@ const Navbar = (navbarProps: NavbarProps) => {
       {navbarProps.isMenuOpen && (
         <div className={styles.mobile_menu}>
           <hr className={styles.hr} />
-          <h2 className={styles.link}>Home</h2>
-          <h2 className={styles.link}>About</h2>
-          <h2 className={styles.link}>Contact</h2>
+          <h2 className={styles.link} onClick={() => navigate('/')}>
+            Home
+          </h2>
+          <h2 className={styles.link} onClick={() => navigate('/about')}>
+            About
+          </h2>
+          <h2 className={styles.link} onClick={() => navigate('/contact')}>
+            Contact
+          </h2>
           <div className={styles.menubar}>
             <SocialMediaSet />
           </div>

@@ -8,7 +8,7 @@ public_folder: /assets
 collections:
   - label: 'Main Page'
     name: 'mainPage'
-    folder: 'content/'
+    folder: 'content/galleries'
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
@@ -100,7 +100,7 @@ collections:
                             multiple: true
   - label: 'About Page'
     name: 'aboutPage'
-    folder: 'about/'
+    folder: 'content/about'
     create: true
     fields:
       - {

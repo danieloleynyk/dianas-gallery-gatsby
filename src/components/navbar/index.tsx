@@ -10,6 +10,8 @@ import {
   RiInstagramFill,
   RiMenuLine,
   RiCloseLine,
+  RiAccountCircleFill,
+  RiMessage2Fill,
 } from 'react-icons/ri'
 
 export type NavbarProps = {
@@ -79,6 +81,23 @@ const Navbar = (navbarProps: NavbarProps) => {
       </Link>
 
       <div className={styles.menubar}>
+        <IconContext.Provider value={{ color: 'white' }}>
+          <div className={styles.icon}>
+            <a
+              href="https://www.facebook.com/diana1later8artist/"
+              target="_blank"
+            >
+              <RiAccountCircleFill />
+            </a>
+          </div>
+        </IconContext.Provider>
+        <IconContext.Provider value={{ color: 'white' }}>
+          <div className={styles.icon}>
+            <Link to="/contact">
+              <RiMessage2Fill />
+            </Link>
+          </div>
+        </IconContext.Provider>
         <SocialMediaSet />
         <IconContext.Provider value={{ color: 'white' }}>
           <div className={styles.menu_icon} onClick={navbarProps.setMenuOpen}>

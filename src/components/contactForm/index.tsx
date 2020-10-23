@@ -43,7 +43,7 @@ const ContactForm = () => {
 
   return (
     <div className={styles.root}>
-      <h1 style={{ fontSize: '1.5em', width: '80%' }}>
+      <h1 className={styles.main_title} style={{ fontSize: '1.5em' }}>
         Do you want to work with me?
       </h1>
       <div>
@@ -54,6 +54,7 @@ const ContactForm = () => {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
+          className={styles.form}
         >
           <input type="hidden" name="form-name" value="contact" />
 
@@ -100,6 +101,7 @@ const ContactForm = () => {
               <textarea
                 name="message"
                 rows={5}
+                cols={5}
                 value={message}
                 placeholder="An informative message that will help us work together"
                 onChange={(e) => setMessage(e.target.value)}
@@ -107,7 +109,7 @@ const ContactForm = () => {
               />
             </label>
           </p>
-          <p>
+          <p className={styles.button_paragraph}>
             <button
               type="submit"
               className={styles.submit_button}

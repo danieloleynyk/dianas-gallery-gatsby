@@ -36,7 +36,10 @@ export default MainGallery
 export const query = graphql`
   query {
     output: allFile(
-      filter: { sourceInstanceName: { eq: "content" }, extension: { eq: "md" } }
+      filter: {
+        sourceInstanceName: { eq: "galleries" }
+        extension: { eq: "md" }
+      }
     ) {
       edges {
         node {

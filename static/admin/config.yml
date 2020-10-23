@@ -98,3 +98,26 @@ collections:
                         media_library:
                           config:
                             multiple: true
+  - label: 'About Page'
+    name: 'aboutPage'
+    folder: 'about/'
+    create: true
+    fields:
+      - {
+          label: Languege,
+          name: languege,
+          widget: 'select',
+          options: ['en', 'he'],
+          default: 'en',
+        }
+      - {
+          label: 'Title',
+          name: 'title',
+          widget: 'string',
+          default: 'About Page',
+        }
+      - label: Content
+        name: content
+        widget: list
+        fields:
+          - { label: 'Paragraph', name: 'paragraph', widget: 'string' }

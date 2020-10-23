@@ -1,0 +1,30 @@
+.root {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: white;
+}
+
+.root > .main_title {
+  text-decoration: underline;
+  font-size: 2.2em;
+}
+
+.content {
+  height: 100%;
+  width: 60%;
+}
+
+.content > p {
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    width: 90%;
+  }
+}

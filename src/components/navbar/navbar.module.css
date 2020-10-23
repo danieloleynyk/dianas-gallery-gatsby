@@ -124,4 +124,8 @@
   .logo {
     height: 60px;
   }
+
+  .mobile_menu > .link:hover {
+    transform: none;
+  }
 }

@@ -83,12 +83,9 @@ const Navbar = (navbarProps: NavbarProps) => {
       <div className={styles.menubar}>
         <IconContext.Provider value={{ color: 'white' }}>
           <div className={styles.icon}>
-            <a
-              href="https://www.facebook.com/diana1later8artist/"
-              target="_blank"
-            >
+            <Link to="/about">
               <RiAccountCircleFill />
-            </a>
+            </Link>
           </div>
         </IconContext.Provider>
         <IconContext.Provider value={{ color: 'white' }}>

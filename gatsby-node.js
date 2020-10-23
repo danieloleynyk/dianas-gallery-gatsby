@@ -23,7 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      allFile(filter: { sourceInstanceName: { eq: "content" } }) {
+      allFile(filter: { sourceInstanceName: { eq: "galleries" } }) {
         edges {
           node {
             id

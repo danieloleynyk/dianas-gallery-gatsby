@@ -15,7 +15,7 @@ collections:
           label: 'Title',
           name: 'title',
           widget: 'string',
-          hide: True,
+          hide: true,
           default: 'Galleries',
         }
       - label: 'Categories'
@@ -122,7 +122,7 @@ collections:
           label: 'Title',
           name: 'title',
           widget: 'string',
-          hide: True,
+          hide: true,
           default: 'About Page',
         }
       - label: Content
@@ -146,7 +146,7 @@ collections:
           label: 'Title',
           name: 'title',
           widget: 'string',
-          hide: True,
+          hide: true,
           default: 'Contact Page',
         }
       - { label: 'Form Title', name: 'formTitle', widget: 'string' }

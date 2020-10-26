@@ -5,7 +5,32 @@ import styles from './contact_form.module.css'
 import { IconContext } from 'react-icons'
 import { VscLoading } from 'react-icons/vsc'
 
-const ContactForm = () => {
+export interface ContactFormProps {
+  languege: string
+  formTitle: string
+  formDescription: string
+  nameField: {
+    name: string
+    placeholder: string
+  }
+  phoneField: {
+    name: string
+    placeholder: string
+  }
+  emailField: {
+    name: string
+    placeholder: string
+  }
+  messageField: {
+    name: string
+    placeholder: string
+  }
+  submitButton: {
+    name: string
+  }
+}
+
+const ContactForm = (contactForm: ContactFormProps) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -42,10 +67,15 @@ const ContactForm = () => {
   }
 
   return (
-    <div className={styles.root}>
+    <div
+      className={styles.root}
+      dir={contactForm.languege === 'he' ? 'rtl' : 'ltr'}
+    >
       <h1 className={styles.main_title} style={{ fontSize: '1.5em' }}>
-        Do you want to work with me?
+        {contactForm.formTitle}
       </h1>
+
+      <p style={{ textAlign: 'center' }}>{contactForm.formDescription}</p>
       <div>
         <form
           name="contact"
@@ -60,11 +90,11 @@ const ContactForm = () => {
 
           <p>
             <label>
-              Name: <br />
+              {contactForm.nameField.name}: <br />
               <input
                 type="text"
                 name="name"
-                placeholder="John Smith"
+                placeholder={contactForm.nameField.placeholder}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -73,22 +103,22 @@ const ContactForm = () => {
           </p>
           <p>
             <label>
-              Phone: <br />
+              {contactForm.phoneField.name}: <br />
               <input
                 type="tel"
                 name="phone"
-                placeholder="123-4567890"
+                placeholder={contactForm.nameField.placeholder}
                 required
               />
             </label>
           </p>
           <p>
             <label>
-              Email: <br />
+              {contactForm.emailField.name}: <br />
               <input
                 type="email"
                 name="email"
-                placeholder="john@gmail.com"
+                placeholder={contactForm.emailField.placeholder}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -97,13 +127,13 @@ const ContactForm = () => {
           </p>
           <p>
             <label>
-              Message: <br />
+              {contactForm.messageField.name}: <br />
               <textarea
                 name="message"
                 rows={5}
                 cols={5}
                 value={message}
-                placeholder="An informative message that will help us work together"
+                placeholder={contactForm.messageField.name}
                 onChange={(e) => setMessage(e.target.value)}
                 required
               />
@@ -122,7 +152,7 @@ const ContactForm = () => {
                   </div>
                 </IconContext.Provider>
               ) : (
-                'Submit'
+                contactForm.submitButton.name
               )}
             </button>
           </p>

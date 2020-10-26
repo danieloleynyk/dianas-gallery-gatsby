@@ -1,5 +1,6 @@
 ---
 languege: en
+title: Contact Page
 formTitle: Let's work together!
 formDescription: My Name is Diana, I'm a photographer.
 nameField:

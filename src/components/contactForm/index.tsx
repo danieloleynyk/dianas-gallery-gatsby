@@ -133,7 +133,7 @@ const ContactForm = (contactForm: ContactFormProps) => {
                 rows={5}
                 cols={5}
                 value={message}
-                placeholder={contactForm.messageField.name}
+                placeholder={contactForm.messageField.placeholder}
                 onChange={(e) => setMessage(e.target.value)}
                 required
               />

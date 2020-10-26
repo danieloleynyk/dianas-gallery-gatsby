@@ -9,7 +9,6 @@ collections:
   - label: 'Main Page'
     name: 'mainPage'
     folder: 'content/galleries'
-    create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - label: 'Categories'
@@ -103,7 +102,6 @@ collections:
   - label: 'About Page'
     name: 'aboutPage'
     folder: 'content/about'
-    create: true
     fields:
       - {
           label: Languege,

@@ -41,6 +41,7 @@
 
 .icon,
 .menu_icon {
+  position: relative;
   padding: 0.3em;
   font-size: 1.7em;
   transition: ease-in-out 0.2s;
@@ -48,6 +49,25 @@
 
 .icon:hover {
   cursor: pointer;
+}
+
+.icon::after {
+  content: attr(data-name);
+  display: block;
+  position: absolute;
+  color: white;
+  font-size: 0.6em;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+  transform: scale(0);
+  transition: transform ease-out 150ms, bottom ease-out 150ms;
+}
+
+.icon:hover::after {
+  transform: scale(1);
+  top: 100%;
+  right: 50%;
 }
 
 .menu_icon {

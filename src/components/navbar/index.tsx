@@ -27,7 +27,7 @@ export const NavbarTemplate = (navbarProps: NavbarProps) => {
       </Link>
 
       <div className={styles.menubar}>
-        <SocialMediaSet />
+        <SocialMediaSet hints={true} />
         <IconContext.Provider value={{ color: 'white' }}>
           <div className={styles.menu_icon} onClick={navbarProps.setMenuOpen}>
             {navbarProps.isMenuOpen ? <RiCloseLine /> : <RiMenuLine />}
@@ -44,7 +44,7 @@ export const NavbarTemplate = (navbarProps: NavbarProps) => {
             <h2 className={styles.link}>Contact</h2>
           </Link>
           <div className={styles.menubar}>
-            <SocialMediaSet />
+            <SocialMediaSet hints={false} />
           </div>
           <hr className={styles.hr} style={{ marginTop: '1em' }} />
         </div>
@@ -82,20 +82,20 @@ const Navbar = (navbarProps: NavbarProps) => {
 
       <div className={styles.menubar}>
         <IconContext.Provider value={{ color: 'white' }}>
-          <div className={styles.icon}>
+          <div className={styles.icon} data-name="About">
             <Link to="/about">
               <RiAccountCircleFill />
             </Link>
           </div>
         </IconContext.Provider>
         <IconContext.Provider value={{ color: 'white' }}>
-          <div className={styles.icon}>
+          <div className={styles.icon} data-name="Contact">
             <Link to="/contact">
               <RiMessage2Fill />
             </Link>
           </div>
         </IconContext.Provider>
-        <SocialMediaSet />
+        <SocialMediaSet hints={true} />
         <IconContext.Provider value={{ color: 'white' }}>
           <div className={styles.menu_icon} onClick={navbarProps.setMenuOpen}>
             {navbarProps.isMenuOpen ? <RiCloseLine /> : <RiMenuLine />}
@@ -116,7 +116,7 @@ const Navbar = (navbarProps: NavbarProps) => {
             Contact
           </h2>
           <div className={styles.menubar}>
-            <SocialMediaSet />
+            <SocialMediaSet hints={false} />
           </div>
           <hr className={styles.hr} style={{ marginTop: '1em' }} />
         </div>
@@ -125,10 +125,14 @@ const Navbar = (navbarProps: NavbarProps) => {
   )
 }
 
-const SocialMediaSet = () => (
+interface SocialMediaSetProps {
+  hints: Boolean
+}
+
+const SocialMediaSet = ({ hints }: SocialMediaSetProps) => (
   <>
     <IconContext.Provider value={{ color: 'white' }}>
-      <div className={styles.icon}>
+      <div className={styles.icon} data-name={hints ? 'Instagram' : ''}>
         <a
           href="https://www.instagram.com/diana_photographer/"
           target="_blank"
@@ -139,7 +143,7 @@ const SocialMediaSet = () => (
       </div>
     </IconContext.Provider>
     <IconContext.Provider value={{ color: 'white' }}>
-      <div className={styles.icon}>
+      <div className={styles.icon} data-name={hints ? 'Facebook' : ''}>
         <a
           href="https://www.facebook.com/diana1later8artist/"
           target="_blank"

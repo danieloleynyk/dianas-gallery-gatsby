@@ -1,10 +1,10 @@
 ---
-languege: en
+languege: he
 title: Contact Page
-formTitle: Let's work together!
-formDescription: My Name is Diana, I'm a photographer.
+formTitle: בוא נעבוד ביחד
+formDescription: קוראים לי דיאנה
 nameField:
-  name: Name
+  name: שם
   placeholder: John Smith
 phoneField:
   name: Phone

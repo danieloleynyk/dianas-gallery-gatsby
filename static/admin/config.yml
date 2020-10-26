@@ -151,27 +151,32 @@ collections:
         }
       - { label: 'Form Title', name: 'formTitle', widget: 'string' }
       - { label: 'Form Description', name: 'formDescription', widget: 'string' }
-      - label: nameField
-        name: Name Field
+      - label: Name Field
+        name: nameField
         widget: object
         fields:
           - { label: 'Name', name: 'name', widget: 'string' }
           - { label: 'Placeholder', name: 'placeholder', widget: 'string' }
-      - label: phoneField
-        name: Phone Field
+      - label: Phone Field
+        name: phoneField
         widget: object
         fields:
           - { label: 'Name', name: 'name', widget: 'string' }
           - { label: 'Placeholder', name: 'placeholder', widget: 'string' }
-      - label: emailField
-        name: Email Field
+      - label: Email Field
+        name: emailField
         widget: object
         fields:
           - { label: 'Name', name: 'name', widget: 'string' }
           - { label: 'Placeholder', name: 'placeholder', widget: 'string' }
-      - label: messageField
-        name: Message Field
+      - label: Message Field
+        name: messageField
         widget: object
         fields:
           - { label: 'Name', name: 'name', widget: 'string' }
           - { label: 'Placeholder', name: 'placeholder', widget: 'string' }
+      - label: Submit Button
+        name: submitButton
+        widget: object
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }

@@ -1,7 +1,8 @@
 ---
 title: Main Page
 categories:
-  - title: Stills
+  - title: סטילס
+    name: stills
     image: /assets/1.jpg
     offset_x: 0
     offset_y: 13
@@ -12,7 +13,8 @@ categories:
         offset_y: 0
         height: '2'
         width: '2'
-        title: People
+        title: אנשים
+        name: people
         image: /assets/5.jpg
         gallery:
           files:
@@ -26,6 +28,7 @@ categories:
         height: '2'
         width: '1'
         title: Nature
+        name: nature
         image: /assets/2.jpg
         gallery:
           files:
@@ -37,6 +40,7 @@ categories:
         height: '1'
         width: '1'
         title: Travel
+        name: travel
         image: /assets/bc6d3cea-b904-43dd-9dbc-8bda435325d1.jpg
         gallery:
           files:
@@ -46,6 +50,7 @@ categories:
         height: '1'
         width: '1'
         title: Weddings
+        name: weddings
         image: /assets/4.jpg
         gallery:
           files:
@@ -56,6 +61,7 @@ categories:
         width: '2'
         image: /assets/6.jpg
         title: Birthdays
+        name: birthdays
         gallery:
           files:
             - file: /assets/logo.png
@@ -65,6 +71,7 @@ categories:
         width: '1'
         image: /assets/fd4986a1-dc00-4c23-bdc1-a82203fe09d4.jpg
         title: Holidays
+        name: holidays
         gallery:
           files:
             - file: /assets/6.jpg
@@ -73,6 +80,7 @@ categories:
         height: '2'
         width: '2'
         title: People
+        name: people
         image: /assets/5.jpg
         gallery:
           files:
@@ -86,6 +94,7 @@ categories:
         height: '2'
         width: '1'
         title: Nature
+        name: nature
         image: /assets/2.jpg
         gallery:
           files:
@@ -97,6 +106,7 @@ categories:
         height: '1'
         width: '1'
         title: Travel
+        name: travel
         image: /assets/bc6d3cea-b904-43dd-9dbc-8bda435325d1.jpg
         gallery:
           files:
@@ -106,6 +116,7 @@ categories:
         height: '2'
         width: '2'
         title: People
+        name: people
         image: /assets/5.jpg
         gallery:
           files:
@@ -119,6 +130,7 @@ categories:
         height: '2'
         width: '1'
         title: Nature
+        name: nature
         image: /assets/2.jpg
         gallery:
           files:
@@ -130,11 +142,13 @@ categories:
         height: '1'
         width: '1'
         title: Travel
+        name: travel
         image: /assets/bc6d3cea-b904-43dd-9dbc-8bda435325d1.jpg
         gallery:
           files:
             - file: /assets/2.jpg
   - title: Video
+    name: video
     image: /assets/1.jpg
     offset_x: 0
     offset_y: 13
@@ -146,6 +160,7 @@ categories:
         height: '2'
         width: '2'
         title: People
+        name: people
         image: /assets/5.jpg
         gallery:
           files:
@@ -159,6 +174,7 @@ categories:
         height: '2'
         width: '1'
         title: Nature
+        name: nature
         image: /assets/2.jpg
         gallery:
           files:
@@ -170,6 +186,7 @@ categories:
         height: '1'
         width: '1'
         title: Travel
+        name: travel
         image: /assets/bc6d3cea-b904-43dd-9dbc-8bda435325d1.jpg
         gallery:
           files:
@@ -179,6 +196,7 @@ categories:
         height: '1'
         width: '1'
         title: Weddings
+        name: weddings
         image: /assets/4.jpg
         gallery:
           files:
@@ -189,6 +207,7 @@ categories:
         width: '2'
         image: /assets/6.jpg
         title: Birthdays
+        name: birthdays
         gallery:
           files:
             - file: /assets/logo.png
@@ -198,6 +217,7 @@ categories:
         width: '1'
         image: /assets/fd4986a1-dc00-4c23-bdc1-a82203fe09d4.jpg
         title: Holidays
+        name: holidays
         gallery:
           files:
             - file: /assets/6.jpg

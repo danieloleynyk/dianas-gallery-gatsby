@@ -17,6 +17,7 @@ collections:
         widget: 'list'
         fields:
           - { label: Title, name: title, widget: 'string' }
+          - { label: Name, name: name, widget: 'string' }
           - label: 'Cover Image'
             name: 'image'
             widget: 'file'
@@ -54,6 +55,7 @@ collections:
             widget: list
             fields:
               - { label: Title, name: title, widget: 'string' }
+              - { label: Name, name: name, widget: 'string' }
               - label: 'Cover Image'
                 name: 'image'
                 widget: 'file'

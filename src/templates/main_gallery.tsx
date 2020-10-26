@@ -13,22 +13,18 @@ const MainGallery = ({ data, location }: any) => {
     data.output.edges[0].node.childMarkdownRemark.frontmatter.categories
 
   const urlParams = String(pathname).split('/')
-  const mainCategoryTitle = String(urlParams.pop()) || String(urlParams.pop())
+  const mainCategoryName = String(urlParams.pop()) || String(urlParams.pop())
 
   const category = categories.find(
     (category: any) =>
-      String(category.title).toLowerCase() === mainCategoryTitle.toLowerCase()
+      String(category.name).toLowerCase() === mainCategoryName.toLowerCase()
   )
 
   return (
     <Layout>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>
-          DianaLater -{' '}
-          {mainCategoryTitle.charAt(0).toUpperCase() +
-            mainCategoryTitle.slice(1)}
-        </title>
+        <title>DianaLater - {String(category.name)}</title>
       </Helmet>
       <Gallery
         images={category.sub_categories.map((sub_category: any) => ({
@@ -37,8 +33,8 @@ const MainGallery = ({ data, location }: any) => {
           height: sub_category.height,
           offset_x: sub_category.offset_x,
           offset_y: sub_category.offset_y,
-          link: `/gallery/${String(mainCategoryTitle).toLowerCase()}/${String(
-            sub_category.title
+          link: `/gallery/${String(category.name).toLowerCase()}/${String(
+            sub_category.name
           ).toLowerCase()}`,
           title: sub_category.title,
         }))}
@@ -59,12 +55,14 @@ export const query = graphql`
             frontmatter {
               categories {
                 title
+                name
                 sub_categories {
                   offset_x
                   offset_y
                   height
                   width
                   title
+                  name
                   image {
                     childImageSharp {
                       fluid(quality: 100) {

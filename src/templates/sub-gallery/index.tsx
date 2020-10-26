@@ -12,19 +12,18 @@ import ReactPlayer from 'react-player/lazy'
 
 const ChosenGallery = ({ data, location }: any) => {
   const { pathname } = location
-  const mainCategoryTitle = String(pathname).split('/').slice(-2)[0]
-  const subCategoryTitle = String(pathname).split('/').slice(-1)[0]
+  const mainCategoryName = String(pathname).split('/').slice(-2)[0]
+  const subCategoryName = String(pathname).split('/').slice(-1)[0]
 
   const category = data.category.edges[0].node.childMarkdownRemark.frontmatter.categories.find(
-    (category: any) =>
-      String(category.title).toLowerCase() === mainCategoryTitle
+    (category: any) => String(category.name).toLowerCase() === mainCategoryName
   )
 
   const subCategory =
     category !== undefined
       ? category.sub_categories.find(
           (subCategory: any) =>
-            String(subCategory.title).toLowerCase() === subCategoryTitle &&
+            String(subCategory.name).toLowerCase() === subCategoryName &&
             'gallery' in subCategory &&
             subCategory.gallery !== null &&
             'files' in subCategory.gallery &&
@@ -63,13 +62,7 @@ const ChosenGallery = ({ data, location }: any) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          DianaLater -{' '}
-          {mainCategoryTitle.charAt(0).toUpperCase() +
-            mainCategoryTitle.slice(1)}{' '}
-          -
-          {' ' +
-            subCategoryTitle.charAt(0).toUpperCase() +
-            subCategoryTitle.slice(1)}
+          DianaLater - {category.name} - {subCategory.name}
         </title>
       </Helmet>
       <div className={styles.root}>
@@ -134,8 +127,10 @@ export const query = graphql`
             frontmatter {
               categories {
                 title
+                name
                 sub_categories {
                   title
+                  name
                   gallery {
                     files {
                       file {

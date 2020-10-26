@@ -30,9 +30,9 @@ exports.createPages = async ({ graphql, actions }) => {
             childMarkdownRemark {
               frontmatter {
                 categories {
-                  title
+                  name
                   sub_categories {
-                    title
+                    name
                   }
                 }
               }
@@ -47,7 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     node.childMarkdownRemark.frontmatter.categories.forEach((category) => {
       createPage({
-        path: path.join("gallery", String(category.title).toLowerCase()),
+        path: path.join("gallery", String(category.name).toLowerCase()),
         component: path.resolve(`./src/templates/main_gallery.tsx`),
       })
 
@@ -56,8 +56,8 @@ exports.createPages = async ({ graphql, actions }) => {
           createPage({
             path: path.join(
               "gallery",
-              String(category.title).toLowerCase(),
-              String(sub_category.title).toLowerCase()
+              String(category.name).toLowerCase(),
+              String(sub_category.name).toLowerCase()
             ),
             component: path.resolve(`./src/templates/sub-gallery/index.tsx`),
           })

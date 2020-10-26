@@ -129,14 +129,22 @@ const SocialMediaSet = () => (
   <>
     <IconContext.Provider value={{ color: 'white' }}>
       <div className={styles.icon}>
-        <a href="https://www.instagram.com/diana_photographer/" target="_blank">
+        <a
+          href="https://www.instagram.com/diana_photographer/"
+          target="_blank"
+          rel="noreferrer nofollow"
+        >
           <RiInstagramFill />
         </a>
       </div>
     </IconContext.Provider>
     <IconContext.Provider value={{ color: 'white' }}>
       <div className={styles.icon}>
-        <a href="https://www.facebook.com/diana1later8artist/" target="_blank">
+        <a
+          href="https://www.facebook.com/diana1later8artist/"
+          target="_blank"
+          rel="noreferrer nofollow"
+        >
           <RiFacebookCircleFill />
         </a>
       </div>

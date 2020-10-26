@@ -21,7 +21,7 @@ const MainGallery = ({ data }: any) => {
               height: parseInt(category.height),
               offset_x: category.offset_x,
               offset_y: category.offset_y,
-              link: `/gallery/${String(category.title).toLowerCase()}`,
+              link: `/gallery/${String(category.name).toLowerCase()}`,
               title: category.title,
             }
           }
@@ -51,6 +51,7 @@ export const query = graphql`
                 width
                 height
                 title
+                name
                 image {
                   childImageSharp {
                     fluid(quality: 75) {

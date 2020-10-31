@@ -38,11 +38,9 @@ export const query = graphql`
               }
               phoneField {
                 name
-                placeholder
               }
               emailField {
                 name
-                placeholder
               }
               messageField {
                 name

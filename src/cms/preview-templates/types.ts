@@ -28,6 +28,6 @@ export interface Category {
   sub_categories: SubCategory[]
 }
 
-export interface Props {
+export interface CategoriesProps {
   images: Image[]
 }

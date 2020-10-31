@@ -48,6 +48,12 @@ textarea {
   resize: none;
 }
 
+input::placeholder,
+textarea::placeholder {
+  font-size: 1.2em;
+  font-family: 'Times New Roman', Times, serif;
+}
+
 .icon {
   font-size: 1.2em;
   animation: rotating 2s linear infinite;

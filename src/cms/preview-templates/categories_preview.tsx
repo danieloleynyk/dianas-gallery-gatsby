@@ -2,7 +2,7 @@ import React from 'react'
 
 import { LayoutTemplate } from '../../components/layout'
 import Gallery from '../../components/gallery'
-import { Props, Category, SubCategory } from './types'
+import { CategoriesProps as Props, Category, SubCategory } from './types'
 
 const GalleryTemplate = ({ images }: Props) => {
   return (

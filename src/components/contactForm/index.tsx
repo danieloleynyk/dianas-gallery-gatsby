@@ -15,11 +15,9 @@ export interface ContactFormProps {
   }
   phoneField: {
     name: string
-    placeholder: string
   }
   emailField: {
     name: string
-    placeholder: string
   }
   messageField: {
     name: string
@@ -107,7 +105,7 @@ const ContactForm = (contactForm: ContactFormProps) => {
               <input
                 type="tel"
                 name="phone"
-                placeholder={contactForm.nameField.placeholder}
+                placeholder="123-456890"
                 required
               />
             </label>
@@ -118,7 +116,7 @@ const ContactForm = (contactForm: ContactFormProps) => {
               <input
                 type="email"
                 name="email"
-                placeholder={contactForm.emailField.placeholder}
+                placeholder="john@gmail.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required

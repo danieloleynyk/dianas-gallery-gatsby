@@ -103,7 +103,6 @@ collections:
                         name: 'video'
                         required: false
                         widget: 'string'
-
   - label: 'About Page'
     name: 'aboutPage'
     delete: false
@@ -160,13 +159,11 @@ collections:
         widget: object
         fields:
           - { label: 'Name', name: 'name', widget: 'string' }
-          - { label: 'Placeholder', name: 'placeholder', widget: 'string' }
       - label: Email Field
         name: emailField
         widget: object
         fields:
           - { label: 'Name', name: 'name', widget: 'string' }
-          - { label: 'Placeholder', name: 'placeholder', widget: 'string' }
       - label: Message Field
         name: messageField
         widget: object

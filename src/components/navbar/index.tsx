@@ -54,7 +54,7 @@ export const NavbarTemplate = (navbarProps: NavbarProps) => {
 const Navbar = (navbarProps: NavbarProps) => {
   return (
     <div className={styles.navbar}>
-      <Link to="/" aria-lang="Home">
+      <Link to="/">
         <div className={styles.logo}>
           <StaticQuery
             query={graphql`
@@ -81,14 +81,14 @@ const Navbar = (navbarProps: NavbarProps) => {
       <div className={styles.menubar}>
         <IconContext.Provider value={{ color: 'white' }}>
           <div className={styles.icon} data-name="About">
-            <Link to="/about" aria-label="About">
+            <Link to="/about">
               <RiAccountCircleFill />
             </Link>
           </div>
         </IconContext.Provider>
         <IconContext.Provider value={{ color: 'white' }}>
           <div className={styles.icon} data-name="Contact">
-            <Link to="/contact" aria-label="Contact">
+            <Link to="/contact">
               <RiMessage2Fill />
             </Link>
           </div>

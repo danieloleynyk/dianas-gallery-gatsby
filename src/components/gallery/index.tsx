@@ -42,7 +42,7 @@ const Gallery = ({ images, style }: Props) => {
               availableWidths[image.width]
             )}
           >
-            <Link to={image.link} aria-label={image.title}>
+            <Link to={image.link}>
               <div className={styles.gallery_item}>
                 <div className={styles.image}>
                   {'srcSet' in (image.source as any) ? (

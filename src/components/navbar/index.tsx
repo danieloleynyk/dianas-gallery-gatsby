@@ -40,9 +40,7 @@ export const NavbarTemplate = (navbarProps: NavbarProps) => {
           <hr className={styles.hr} />
           <h2 className={styles.link}>Home</h2>
           <h2 className={styles.link}>About</h2>
-          <Link to="/contact">
-            <h2 className={styles.link}>Contact</h2>
-          </Link>
+          <h2 className={styles.link}>Contact</h2>
           <div className={styles.menubar}>
             <SocialMediaSet hints={false} />
           </div>

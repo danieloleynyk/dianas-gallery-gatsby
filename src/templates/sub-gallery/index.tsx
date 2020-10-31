@@ -8,7 +8,7 @@ import styles from './subGallery.module.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { Carousel } from 'react-responsive-carousel'
 
-import ReactPlayer from 'react-player/lazy'
+import ReactPlayer from 'react-player/youtube'
 
 const ChosenGallery = ({ data, location }: any) => {
   const { pathname } = location
@@ -32,6 +32,7 @@ const ChosenGallery = ({ data, location }: any) => {
       : undefined
 
   const assets = subCategory !== undefined ? [...subCategory.gallery.files] : []
+  console.log(assets)
 
   const customRenderThumbs = (children: any) =>
     children.map((item: { key: number }) => {
@@ -92,19 +93,17 @@ const ChosenGallery = ({ data, location }: any) => {
                     }}
                   />
                 ) : (
-                  asset.video.extension == 'mp4' && (
-                    <div
-                      className={styles.video_player}
-                      style={{ height: '60vh', width: '100%' }}
-                    >
-                      <ReactPlayer
-                        controls
-                        url={`/assets/${asset.video.relativePath}`}
-                        height="80%"
-                        width="80%"
-                      />
-                    </div>
-                  )
+                  <div
+                    className={styles.video_player}
+                    style={{ height: '60vh', width: '100%' }}
+                  >
+                    <ReactPlayer
+                      controls
+                      url={asset.video}
+                      height="80%"
+                      width="80%"
+                    />
+                  </div>
                 )}
               </div>
             )
@@ -141,11 +140,7 @@ export const query = graphql`
                         }
                         relativePath
                       }
-                      video {
-                        publicURL
-                        relativePath
-                        extension
-                      }
+                      video
                     }
                   }
                 }

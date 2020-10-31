@@ -3,7 +3,7 @@ title: Main Page
 categories:
   - title: סטילס
     name: stills
-    image: /assets/1.jpg
+    image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
     offset_x: 0
     offset_y: 13
     height: '2'
@@ -15,141 +15,139 @@ categories:
         width: '2'
         title: אנשים
         name: people
-        image: /assets/5.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/1.jpg
-              video: /assets/sample_video.mp4
-            - file: /assets/2.jpg
-            - file: /assets/1.jpg
-            - file: /assets/4.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+              video: https://www.youtube.com/watch?v=3hLmDS179YE
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+              video: https://www.youtube.com/watch?v=3hLmDS179YE
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 50
         offset_y: 0
         height: '2'
         width: '1'
         title: Nature
         name: nature
-        image: /assets/2.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/3.jpg
-            - file: /assets/5.jpg
-            - file: /assets/6.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 0
         offset_y: 0
         height: '1'
         width: '1'
         title: Travel
         name: travel
-        image: /assets/bc6d3cea-b904-43dd-9dbc-8bda435325d1.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/2.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 0
         offset_y: 0
         height: '1'
         width: '1'
         title: Weddings
         name: weddings
-        image: /assets/4.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/video.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 0
         offset_y: 0
         height: '1'
         width: '2'
-        image: /assets/6.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         title: Birthdays
         name: birthdays
         gallery:
           files:
-            - file: /assets/logo.png
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 52
         offset_y: 0
         height: '2'
         width: '1'
-        image: /assets/fd4986a1-dc00-4c23-bdc1-a82203fe09d4.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         title: Holidays
         name: holidays
         gallery:
           files:
-            - file: /assets/6.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 50
         offset_y: 0
         height: '2'
         width: '2'
         title: People
         name: people
-        image: /assets/5.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/1.jpg
-              video: /assets/sample_video.mp4
-            - file: /assets/2.jpg
-            - file: /assets/1.jpg
-            - file: /assets/4.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 50
         offset_y: 0
         height: '2'
         width: '1'
         title: Nature
         name: nature
-        image: /assets/2.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/3.jpg
-            - file: /assets/5.jpg
-            - file: /assets/6.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 0
         offset_y: 0
         height: '1'
         width: '1'
         title: Travel
         name: travel
-        image: /assets/bc6d3cea-b904-43dd-9dbc-8bda435325d1.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/2.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 50
         offset_y: 0
         height: '2'
         width: '2'
         title: People
         name: people
-        image: /assets/5.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/1.jpg
-              video: /assets/sample_video.mp4
-            - file: /assets/2.jpg
-            - file: /assets/1.jpg
-            - file: /assets/4.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 50
         offset_y: 0
         height: '2'
         width: '1'
         title: Nature
         name: nature
-        image: /assets/2.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/3.jpg
-            - file: /assets/5.jpg
-            - file: /assets/6.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 0
         offset_y: 0
         height: '1'
         width: '1'
         title: Travel
         name: travel
-        image: /assets/bc6d3cea-b904-43dd-9dbc-8bda435325d1.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/2.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
   - title: Video
     name: video
-    image: /assets/1.jpg
+    image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
     offset_x: 0
     offset_y: 13
     height: '2'
@@ -161,64 +159,62 @@ categories:
         width: '2'
         title: People
         name: people
-        image: /assets/5.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/1.jpg
-              video: /assets/sample_video.mp4
-            - file: /assets/2.jpg
-            - file: /assets/1.jpg
-            - file: /assets/4.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 50
         offset_y: 0
         height: '2'
         width: '1'
         title: Nature
         name: nature
-        image: /assets/2.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/3.jpg
-            - file: /assets/5.jpg
-            - file: /assets/6.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 0
         offset_y: 0
         height: '1'
         width: '1'
         title: Travel
         name: travel
-        image: /assets/bc6d3cea-b904-43dd-9dbc-8bda435325d1.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/2.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 0
         offset_y: 0
         height: '1'
         width: '1'
         title: Weddings
         name: weddings
-        image: /assets/4.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         gallery:
           files:
-            - file: /assets/video.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 0
         offset_y: 0
         height: '1'
         width: '2'
-        image: /assets/6.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         title: Birthdays
         name: birthdays
         gallery:
           files:
-            - file: /assets/logo.png
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
       - offset_x: 52
         offset_y: 0
         height: '2'
         width: '1'
-        image: /assets/fd4986a1-dc00-4c23-bdc1-a82203fe09d4.jpg
+        image: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
         title: Holidays
         name: holidays
         gallery:
           files:
-            - file: /assets/6.jpg
+            - file: /assets/0AEFFD09-D3C9-436C-AE69-7923E27C2D46.jpeg
 ---

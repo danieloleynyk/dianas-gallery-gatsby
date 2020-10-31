@@ -33,6 +33,10 @@
   color: white;
 }
 
+.submit_button:hover {
+  cursor: pointer;
+}
+
 input,
 textarea {
   width: 40%;
@@ -42,6 +46,8 @@ textarea {
 
 textarea {
   resize: none;
+  font-size: 1.2em;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 input::placeholder,

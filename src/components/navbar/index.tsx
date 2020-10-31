@@ -54,7 +54,7 @@ export const NavbarTemplate = (navbarProps: NavbarProps) => {
 const Navbar = (navbarProps: NavbarProps) => {
   return (
     <div className={styles.navbar}>
-      <Link to="/">
+      <Link to="/" aria-lang="Home">
         <div className={styles.logo}>
           <StaticQuery
             query={graphql`
@@ -81,14 +81,14 @@ const Navbar = (navbarProps: NavbarProps) => {
       <div className={styles.menubar}>
         <IconContext.Provider value={{ color: 'white' }}>
           <div className={styles.icon} data-name="About">
-            <Link to="/about">
+            <Link to="/about" aria-label="About">
               <RiAccountCircleFill />
             </Link>
           </div>
         </IconContext.Provider>
         <IconContext.Provider value={{ color: 'white' }}>
           <div className={styles.icon} data-name="Contact">
-            <Link to="/contact">
+            <Link to="/contact" aria-label="Contact">
               <RiMessage2Fill />
             </Link>
           </div>
@@ -133,6 +133,7 @@ const SocialMediaSet = ({ hints }: SocialMediaSetProps) => (
       <div className={styles.icon} data-name={hints ? 'Instagram' : ''}>
         <a
           href="https://www.instagram.com/diana_photographer/"
+          aria-label="Instagram"
           target="_blank"
           rel="noreferrer nofollow"
         >
@@ -144,6 +145,7 @@ const SocialMediaSet = ({ hints }: SocialMediaSetProps) => (
       <div className={styles.icon} data-name={hints ? 'Facebook' : ''}>
         <a
           href="https://www.facebook.com/diana1later8artist/"
+          aria-label="Facebook"
           target="_blank"
           rel="noreferrer nofollow"
         >

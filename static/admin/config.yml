@@ -102,10 +102,8 @@ collections:
                       - label: 'Video'
                         name: 'video'
                         required: false
-                        widget: 'file'
-                        media_library:
-                          config:
-                            multiple: true
+                        widget: 'string'
+
   - label: 'About Page'
     name: 'aboutPage'
     delete: false

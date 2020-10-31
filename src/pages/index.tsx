@@ -1,12 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 import Gallery from '../components/gallery'
 
 const MainGallery = ({ data }: any) => {
   return (
     <Layout>
+      <SEO />
       <Gallery
         images={data.output.edges[0].node.childMarkdownRemark.frontmatter.categories.map(
           (category: any) => {

@@ -1,20 +1,20 @@
 ---
-languege: en
+languege: he
 title: Contact Page
-formTitle: Let's work together!
-formDescription: My Name is Diana, I'm a photographer.
+formTitle: בואו נעבוד ביחד!
+formDescription: לפרטים השאר הודעה :)
 nameField:
-  name: Name
-  placeholder: John Smith
+  name: שם
+  placeholder: ישראל ישראלי
 phoneField:
-  name: Phone
-  placeholder: 123-456-7890
+  name: טלפון
+  placeholder: 123-4567890
 emailField:
-  name: Email
+  name: דואר אלקטרוני
   placeholder: john@gmail.com
 messageField:
-  name: Message
-  placeholder: An informative message that will help us work together
+  name: הודעה
+  placeholder: הודעה מפורטת שתעזור לנו למצוא שפה משותפת
 submitButton:
-  name: Send
+  name: שלח
 ---

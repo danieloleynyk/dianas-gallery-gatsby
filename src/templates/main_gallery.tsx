@@ -1,13 +1,13 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 import { FluidObject } from 'gatsby-image'
 
 import Layout from '../components/layout'
 import Gallery from '../components/gallery'
+import SEO from '../components/seo'
 
 const MainGallery = ({ data, location }: any) => {
-  const { pathname } = location
+  const { pathname, href } = location
 
   const categories =
     data.output.edges[0].node.childMarkdownRemark.frontmatter.categories
@@ -22,10 +22,15 @@ const MainGallery = ({ data, location }: any) => {
 
   return (
     <Layout>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>DianaLater - {String(category.name)}</title>
-      </Helmet>
+      <SEO
+        title={`DianaLater - ${
+          String(category.name).charAt(0).toUpperCase() +
+          String(category.name).slice(1)
+        }`}
+        description={`A ${category.name} gallery by Diana Later`}
+        url={href}
+      />
+
       <Gallery
         images={category.sub_categories.map((sub_category: any) => ({
           source: sub_category.image.childImageSharp.fluid as FluidObject,

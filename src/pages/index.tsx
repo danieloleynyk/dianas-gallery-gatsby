@@ -7,11 +7,6 @@ import Gallery from '../components/gallery'
 const MainGallery = ({ data }: any) => {
   return (
     <Layout>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>DianaLater</title>
-      </Helmet>
-
       <Gallery
         images={data.output.edges[0].node.childMarkdownRemark.frontmatter.categories.map(
           (category: any) => {

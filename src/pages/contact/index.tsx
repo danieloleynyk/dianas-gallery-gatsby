@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
+import SEO from '../../components/seo'
 import ContactForm, { ContactFormProps } from '../../components/contactForm'
-import Helmet from 'react-helmet'
 
 const ContactPage = ({ data }: any) => {
   const contactForm: ContactFormProps = {
@@ -11,10 +11,8 @@ const ContactPage = ({ data }: any) => {
 
   return (
     <Layout>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>DianaLater - Contact</title>
-      </Helmet>
+      <SEO title="DianaLater - Contact" />
+
       <ContactForm {...contactForm} />
     </Layout>
   )

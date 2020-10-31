@@ -1,8 +1,8 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
+import SEO from '../../components/seo'
 import Layout from '../../components/layout'
 import styles from './subGallery.module.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -11,7 +11,7 @@ import { Carousel } from 'react-responsive-carousel'
 import ReactPlayer from 'react-player/youtube'
 
 const ChosenGallery = ({ data, location }: any) => {
-  const { pathname } = location
+  const { pathname, href } = location
   const mainCategoryName = String(pathname).split('/').slice(-2)[0]
   const subCategoryName = String(pathname).split('/').slice(-1)[0]
 
@@ -32,7 +32,6 @@ const ChosenGallery = ({ data, location }: any) => {
       : undefined
 
   const assets = subCategory !== undefined ? [...subCategory.gallery.files] : []
-  console.log(assets)
 
   const customRenderThumbs = (children: any) =>
     children.map((item: { key: number }) => {
@@ -60,12 +59,18 @@ const ChosenGallery = ({ data, location }: any) => {
 
   return (
     <Layout>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>
-          DianaLater - {category.name} - {subCategory.name}
-        </title>
-      </Helmet>
+      <SEO
+        title={`DianaLater - ${
+          String(category.name).charAt(0).toUpperCase() +
+          String(category.name).slice(1)
+        } - ${
+          String(subCategory.name).charAt(0).toUpperCase() +
+          String(subCategory.name).slice(1)
+        }`}
+        description={`A ${subCategory.name} gallery by Diana Later`}
+        url={href}
+      />
+
       <div className={styles.root}>
         <Carousel
           className={styles.carousel}

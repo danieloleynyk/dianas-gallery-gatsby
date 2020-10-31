@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import About, { AboutProps } from '../components/about'
+import SEO from '../components/seo'
 
 const AboutPage = ({ data }: any) => {
   const aboutProps: AboutProps = {
@@ -11,10 +11,7 @@ const AboutPage = ({ data }: any) => {
 
   return (
     <Layout>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>DianaLater - About</title>
-      </Helmet>
+      <SEO title="DianaLater - About" />
       <About {...aboutProps} />
     </Layout>
   )

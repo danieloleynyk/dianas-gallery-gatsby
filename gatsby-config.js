@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'DianaLater',
+    title: "DianaLater",
+    description: "Diana Later's portfolio, a small taste of Diana's galleries!",
+    url: "https://diana.oleynyk.dev", 
+    image: "/assets/logo.png", 
+    author: "Diana Later",
   },
   plugins: [
     'gatsby-plugin-react-helmet',

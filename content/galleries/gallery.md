@@ -11,7 +11,7 @@ categories:
     sub_categories:
       - offset_x: 50
         offset_y: 0
-        height: "3"
+        height: "2"
         width: "2"
         title: חתונה
         name: wedding
@@ -33,7 +33,7 @@ categories:
             - file: /assets/1593AE09-01FA-45D9-9751-15D504BA194A.JPG
       - offset_x: 100
         offset_y: 0
-        height: "3"
+        height: "2"
         width: "2"
         title: הריון
         name: pregnancy
@@ -45,7 +45,7 @@ categories:
             - file: /assets/5C39AC1D-D9B4-4CAB-A79E-C52259CFB079.JPG
       - offset_x: 50
         offset_y: 0
-        height: "2"
+        height: "1"
         width: "1"
         title: אופנה
         name: fashion
@@ -58,7 +58,7 @@ categories:
             - file: /assets/851C2095-4BDA-435E-AAB4-8AA66A909D21.JPG
       - offset_x: 30
         offset_y: 0
-        height: "2"
+        height: "1"
         width: "1"
         title: אומנותי
         name: art
